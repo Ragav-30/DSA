@@ -17,6 +17,11 @@ public class ListMain {
 		l.addAtBeginning(1);
 		l.addAtBeginning(2);
 		l.addAtBeginning(3);
+		l.addAtBeginning(4);
+
+		l.insertAtPos(4, 8);
+		l.deleteAtPos(1);
+
 		l.display();
 		System.out.println(" ");
 		l.revdisplay();

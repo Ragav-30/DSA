@@ -65,9 +65,15 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 					throw new IllegalArgumentException("Invalid position");
 				}
 			}
+			if (temp.next != null) {
+				temp.next.prev = n;
+			}
 			n.next = temp.next;
+			n.prev = temp;
 			temp.next = n;
-
+			if (n.next == null) {
+				tail = n;
+			}
 		}
 	}
 
@@ -77,7 +83,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 		}
 		// TODO Auto-generated method stub
 		if (pos == 0) {
-
+			head.next.prev = null;
 			head = head.next;
 			return;
 		}
@@ -90,6 +96,12 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 			temp = temp.next;
 		}
 		position.next = temp.next;
+		if (temp.next != null) {
+			temp.next.prev = position;
+		}
+		if (temp.next == null) {
+			tail = position;
+		}
 	}
 
 	@Override
