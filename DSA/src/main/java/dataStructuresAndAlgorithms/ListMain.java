@@ -13,17 +13,18 @@ public class ListMain {
 		/*
 		 * list.addAtEnd(5); list.display();
 		 */
-		DoublyLinkedList<Integer> l = new DoublyLinkedList<Integer>();
-		l.addAtBeginning(1);
-		l.addAtBeginning(2);
-		l.addAtBeginning(3);
-		l.addAtBeginning(4);
-
-		l.insertAtPos(4, 8);
-		l.deleteAtPos(1);
-
+		CircularLinkedList<String> l = new CircularLinkedList<String>();
+		l.addAtBegining("Ragav");
+		l.addAtBegining("Rowdy");
 		l.display();
-		System.out.println(" ");
-		l.revdisplay();
+		l.addAtEnding("Rockz");
+		l.addAtEnding("Elemento");
+		System.out.println();
+		l.display();
+		l.deleteAtBeginning();
+		l.deleteAtEnd();
+		System.out.println();
+		l.display();
+
 	}
 }
